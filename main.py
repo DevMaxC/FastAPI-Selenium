@@ -23,9 +23,9 @@ async def root():
 async def demo_get():
     driver=createDriver()
 
-    homepage = getGoogleHomepage()
+    homepage = getGoogleHomepage(driver)
     driver.close()
-    return {"message": homepage}
+    return homepage
 
 @app.post("/backgroundDemo")
 async def demo_post(inp: Msg, background_tasks: BackgroundTasks):
